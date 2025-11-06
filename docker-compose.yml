@@ -1,0 +1,10 @@
+services:
+  prometheus-test:
+    image: prom/prometheus
+    container_name: prometheus-test
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:9090:9090"
+
