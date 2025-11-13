@@ -21,3 +21,9 @@ rule_files:
   - "infra_alerts.yml"
   - "network_alerts.yml"
   - "app_alerts.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
