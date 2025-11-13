@@ -30,7 +30,7 @@ services:
     ports:
       - "127.0.0.1:9093:9093"
     volumes:
-      - ./alertmanager:/etc/alertmanager/
+      - ./alertmanager:/alertmanager
     environment:
       - ALERT_SMTP_SERVER=${ALERT_SMTP_SERVER}
       - ALERT_SMTP_FROM=${ALERT_SMTP_FROM}
