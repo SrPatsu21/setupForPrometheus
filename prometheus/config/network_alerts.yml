@@ -29,10 +29,10 @@ groups:
       description: "Detectados erros de transmissão/recepção na interface {{ $labels.device }}."
 
   - alert: InterfaceDown
-    expr: node_network_up == 0
-    for: 2m
+    expr: node_network_up{device!~"lo|veth.*|docker.*"} == 0
+    for: 1m
     labels:
-      severity: critical
+      severity: warning
     annotations:
-      summary: "Interface de rede {{ $labels.device }} está down em {{ $labels.instance }}"
-      description: "A interface {{ $labels.device }} está reportando estado 'down' por mais de 2 minutos."
+      summary: "Interface de rede inativa"
+      description: "A interface {{ $labels.device }} está down no host {{ $labels.instance }}."
