@@ -21,3 +21,11 @@ sudo chmod -R 775 prometheus prometheus_data
 ## Acesso
 
 [aqui](http://127.0.0.1:9090/)
+
+## Gerar config com envsubst
+
+```shell
+sudo apt install gettext-base
+export $(grep -v '^#' .env | xargs)
+envsubst < alertmanager/alertmanager.yml.template > alertmanager/alertmanager.yml
+```
