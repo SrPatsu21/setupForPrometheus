@@ -13,3 +13,5 @@ receivers:
     email_configs:
       - to: '${ALERT_EMAIL_TO}'
         send_resolved: true
+      - to: '${ALERT_EMAIL_TO}'
+        send_resolved: true
